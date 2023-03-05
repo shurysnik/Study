@@ -7,11 +7,11 @@ public interface CrudRepository<T> {
 
     List<T> getAll();
 
-    void save(T entity);
+    boolean save(T entity);
 
-    void saveAll(List<T> entity);
+    boolean saveAll(List<T> entity);
 
-    void update(T entity);
+    boolean update(T entity);
 
     boolean delete(String id);
 }

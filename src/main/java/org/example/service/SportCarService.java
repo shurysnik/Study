@@ -4,7 +4,7 @@ import org.example.model.Manufacturer;
 import org.example.model.SportCar;
 import org.example.repository.SportCarReprository;
 
- import java.math.BigDecimal;
+import java.math.BigDecimal;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
@@ -29,20 +29,23 @@ public class SportCarService {
 
             results.add(sportCar);
             sportCarService.save(sportCar);
-         }
+        }
         return results;
 
     }
-    private Manufacturer getRandomManufacturer(){
-        final Manufacturer[] manufacturers=Manufacturer.values();
+
+    private Manufacturer getRandomManufacturer() {
+        final Manufacturer[] manufacturers = Manufacturer.values();
         final int index = RANDOM.nextInt(manufacturers.length);
         return manufacturers[index];
     }
-    public   void   saveSportCar(List<SportCar>sportCars){
+
+    public void saveSportCar(List<SportCar> sportCars) {
         sportCarService.saveAll(sportCars);
     }
-    public  void printAll(){
-        for (SportCar sportCar:sportCarService.getAll()) {
+
+    public void printAll() {
+        for (SportCar sportCar : sportCarService.getAll()) {
             System.out.println(sportCar);
         }
     }
