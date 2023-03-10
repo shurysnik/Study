@@ -64,9 +64,10 @@ public class AutoRepository implements CrudRepository<Auto> {
         for (Auto auto : autos) {
             if (auto.getBodyType().equals(bodyType)) {
                 AutoCopy.copy(copyFrom, auto);
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 
